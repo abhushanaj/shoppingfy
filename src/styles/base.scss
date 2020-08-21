@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem=10px
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  font-weight: $normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

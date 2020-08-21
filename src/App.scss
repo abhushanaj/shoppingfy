@@ -1,0 +1,13 @@
+@import "./styles/main";
+
+.main__content {
+  background: #fefefe;
+  min-height: 100vh;
+  flex: 0 0 70%;
+}
+
+.shopping__cart {
+  min-height: 100vh;
+  flex: 0 0 20%;
+  background: $pink;
+}
