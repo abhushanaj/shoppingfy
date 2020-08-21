@@ -4,10 +4,11 @@ import plus from "../../asset/plus.svg";
 
 import "./item-card.styles.scss";
 
-const ItemCard = ({ name, description, image }) => {
+const ItemCard = ({ itemDetails }) => {
+  const { name } = itemDetails;
   return (
     <div className="item__card">
-      <p>Avocado</p>
+      <p>{name}</p>
       <span>
         <img src={plus} alt="Plus Icon to add items to shopping list" />
       </span>

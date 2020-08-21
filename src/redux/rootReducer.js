@@ -7,7 +7,7 @@ import shoppingItemsReducer from "./shopping-items/shopping-items.reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["shoppingList"],
+  whitelist: [""],
 };
 
 export const rootReducer = combineReducers({
