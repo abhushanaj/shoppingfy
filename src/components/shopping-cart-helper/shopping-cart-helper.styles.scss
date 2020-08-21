@@ -1,0 +1,41 @@
+@import "../../styles/main";
+
+.addItems__helper {
+  background: $purple;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  position: relative;
+
+  p {
+    color: $white;
+    font-size: 1.7rem;
+    font-weight: $bold;
+    margin-left: 6rem;
+  }
+}
+
+.bottle {
+  position: absolute;
+  width: 80px;
+  height: 160px;
+  top: -4rem;
+  left: -1rem;
+}
+
+.btn {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--add {
+  background: $white;
+  color: $dark-blue;
+  padding: 1rem 1.5rem;
+  margin-left: 6rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  font-weight: $bold;
+  width: 60%;
+}

@@ -10,3 +10,10 @@ export const selectShoppingCartDetails = createSelector(
     return shoppingCart.shoppingCartDetails;
   }
 );
+
+export const selectShoppingCartName = createSelector(
+  [selectShoppingCart],
+  (shoppingCart) => {
+    return shoppingCart.shoppingCartName;
+  }
+);

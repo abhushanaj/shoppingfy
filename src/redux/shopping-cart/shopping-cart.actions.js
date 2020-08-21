@@ -8,3 +8,11 @@ export const addItemToCart = (item) => {
     payload: item,
   };
 };
+
+export const setShoppingCartName = (name) => {
+  return {
+    type: shoppingCartActionTypes.SET_CART_NAME,
+    info: "This action is used to set the name of the present shopping cart",
+    payload: name,
+  };
+};

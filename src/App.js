@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import SideNavigation from "./components/sidenavbar/sidebar.component";
+import ShoppingCart from "./components/shopping-cart/shopping-cart.component";
 
 import HomePage from "./pages/home-page/home-page.component";
 import HistoryPage from "./pages/history-page/history-page.component";
@@ -20,7 +21,9 @@ function App() {
           <Route path="/statistics" exact component={StatisticsPage} />
         </Switch>
       </div>
-      <div className="shopping__cart"></div>
+      <div className="shopping__cart">
+        <ShoppingCart />
+      </div>
     </>
   );
 }

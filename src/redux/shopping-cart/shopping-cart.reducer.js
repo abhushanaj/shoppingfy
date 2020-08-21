@@ -4,6 +4,7 @@ import { addItemToCart } from "./shopping-cart.utils";
 
 const INITIAL_STATE = {
   shoppingCartDetails: [],
+  shoppingCartName: "Shopping List",
 };
 
 const shoppingCartReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +16,12 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
           state.shoppingCartDetails,
           action.payload
         ),
+      };
+    }
+    case shoppingCartActionTypes.SET_CART_NAME: {
+      return {
+        ...state,
+        shoppingCartName: action.payload,
       };
     }
     default:
