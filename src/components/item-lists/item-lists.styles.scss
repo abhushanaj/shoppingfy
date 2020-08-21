@@ -1,0 +1,18 @@
+@import "../../styles/main";
+
+.itemlists {
+  margin-top: 4rem;
+  &__category {
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    color: $dark-blue;
+    font-size: 1.8rem;
+  }
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../styles/main";
+
+// .homepage {
+// }
+
+.heading {
+  color: $black;
+  font-size: 3rem;
+  font-weight: $bold;
+  width: 60%;
+  margin-left: 1rem;
+  span {
+    color: $orange;
+  }
+}

@@ -8,6 +8,7 @@
 
 html {
   font-size: 62.5%; //1rem=10px
+  height: 100%;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   font-family: "Quicksand", sans-serif;
   box-sizing: border-box;
   font-weight: $normal;
+  overflow: hidden;
 }
 
 a {

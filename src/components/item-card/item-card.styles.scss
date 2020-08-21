@@ -1,0 +1,28 @@
+@import "../../styles/main";
+
+.item__card {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 1rem 1.5rem;
+  background: $white;
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  margin: 1rem;
+
+  p {
+    font-size: 1.4rem;
+    font-weight: $bold;
+    color: $dark-blue;
+  }
+  span {
+    width: 20px;
+    height: 20px;
+    margin-left: 2rem;
+    cursor: pointer;
+    img {
+      max-width: 100%;
+    }
+  }
+}
