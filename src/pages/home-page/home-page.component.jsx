@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import ItemLists from "../../components/item-lists/item-lists.component";
 
-import { selectShoppingList } from "../../redux/shopping-items/shopping-items.selectors";
+import { selectShoppingListDetails } from "../../redux/shopping-items/shopping-items.selectors";
 
 import "./home-page.styles.scss";
 
@@ -24,7 +24,7 @@ const HomePage = ({ shoppingList }) => {
 
 const mapStateToProps = (state) => {
   return {
-    shoppingList: selectShoppingList(state),
+    shoppingList: selectShoppingListDetails(state),
   };
 };
 
