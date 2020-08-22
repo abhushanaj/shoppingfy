@@ -32,3 +32,46 @@
     cursor: pointer;
   }
 }
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 20vh;
+}
+
+.group__upper {
+  min-height: 50%;
+}
+
+.cart__illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  img {
+    max-width: 100%;
+  }
+}
+.emptyMessage {
+  text-align: center;
+  font-size: 2rem;
+  color: $dark-blue;
+}
+
+.btn--savecart {
+  width: 60%;
+  margin: 0 auto;
+  color: $white;
+  background: $orange;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  display: block;
+  font-family: inherit;
+  font-weight: $bold;
+  margin-top: 5rem;
+  &:hover {
+    background: rgba($orange, 0.8);
+  }
+}
