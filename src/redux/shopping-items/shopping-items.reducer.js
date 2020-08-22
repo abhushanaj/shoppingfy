@@ -43,19 +43,19 @@ const INITIAL_STATE = {
       categoryName: "Meat and Fish",
       items: [
         {
-          id: "1",
+          id: "9",
           name: "Chicken leg box",
         },
         {
-          id: "2",
+          id: "10",
           name: "Chicken 1kg",
         },
         {
-          id: "3",
+          id: "11",
           name: "Pork fillets 450g ",
         },
         {
-          id: "4",
+          id: "12",
           name: "Salmon 1kg ",
         },
       ],
@@ -65,27 +65,27 @@ const INITIAL_STATE = {
       categoryName: "Beverages",
       items: [
         {
-          id: "1",
+          id: "13",
           name: "Bournvita",
         },
         {
-          id: "2",
+          id: "14",
           name: "Brownie Chocolate Drink",
         },
         {
-          id: "3",
+          id: "14",
           name: "Choc-Ola",
         },
         {
-          id: "4",
+          id: "15",
           name: "Gin",
         },
         {
-          id: "5",
+          id: "16",
           name: "Irish Whiskey",
         },
         {
-          id: "6",
+          id: "17",
           name: "Moonshine",
         },
       ],
@@ -95,15 +95,15 @@ const INITIAL_STATE = {
       categoryName: "Pets Food",
       items: [
         {
-          id: "1",
+          id: "18",
           name: "Chicken leg box",
         },
         {
-          id: "2",
+          id: "19",
           name: "Chicken 1kg",
         },
         {
-          id: "3",
+          id: "20",
           name: "Pork Fillets",
         },
       ],

@@ -12,7 +12,10 @@ import {
 } from "../../redux/shopping-cart/shopping-cart.selectors";
 
 /* Actions */
-import { setShoppingCartName } from "../../redux/shopping-cart/shopping-cart.actions";
+import {
+  setShoppingCartName,
+  clearCart,
+} from "../../redux/shopping-cart/shopping-cart.actions";
 import { saveCartToHistory } from "../../redux/shopping-history/shopping-history.actions";
 
 /* Assests */
@@ -28,6 +31,7 @@ const ShoppingCart = ({
   setCartName,
   shoppingCartList,
   saveCartToHistory,
+  clearCart,
 }) => {
   const [toggleNameEdit, setToggleEdit] = useState(false);
   const imgSource = toggleNameEdit ? check : pen;
@@ -77,15 +81,7 @@ const ShoppingCart = ({
         </>
       ) : (
         <div className="group__lower">
-          <button
-            className="btn btn--savecart"
-            onClick={() =>
-              saveCartToHistory({
-                shoppingCartName,
-                shoppingCartList,
-              })
-            }
-          >
+          <button className="btn btn--savecart" onClick={() => clearCart()}>
             Save Cart
           </button>
         </div>
@@ -105,6 +101,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setCartName: (name) => dispatch(setShoppingCartName(name)),
     saveCartToHistory: (cart) => dispatch(saveCartToHistory(cart)),
+    clearCart: () => dispatch(clearCart()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

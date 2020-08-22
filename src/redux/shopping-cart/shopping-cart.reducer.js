@@ -46,6 +46,12 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
         shoppingCartName: action.payload,
       };
     }
+    case shoppingCartActionTypes.CLEAR_CART: {
+      return {
+        ...state,
+        shoppingCartDetails: [],
+      };
+    }
     default:
       return state;
   }

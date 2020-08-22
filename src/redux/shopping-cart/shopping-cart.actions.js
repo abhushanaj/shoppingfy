@@ -32,3 +32,10 @@ export const reduceCartItem = (itemToReduce) => {
     payload: itemToReduce,
   };
 };
+
+export const clearCart = () => {
+  return {
+    type: shoppingCartActionTypes.CLEAR_CART,
+    info: "This action is used to clear the cart.",
+  };
+};
