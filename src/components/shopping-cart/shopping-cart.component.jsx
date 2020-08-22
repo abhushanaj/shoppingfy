@@ -3,15 +3,20 @@ import { connect } from "react-redux";
 
 import ShoppingCartHelper from "../../components/shopping-cart-helper/shopping-cart-helper.component";
 
-import { selectShoppingCartName } from "../../redux/shopping-cart/shopping-cart.selectors";
+import {
+  selectShoppingCartName,
+  selectShoppingCartDetails,
+} from "../../redux/shopping-cart/shopping-cart.selectors";
 import { setShoppingCartName } from "../../redux/shopping-cart/shopping-cart.actions";
+
+import ShoppingCartItem from "../shopping-cart-item/shopping-cart-item.component";
 
 import pen from "../../asset/pen.svg";
 import check from "../../asset/check.svg";
 
 import "./shopping-cart.styles.scss";
 
-const ShoppingCart = ({ shoppingCartName, setCartName }) => {
+const ShoppingCart = ({ shoppingCartName, setCartName, shoppingCartList }) => {
   const [toggleNameEdit, setToggleEdit] = useState(false);
   const imgSource = toggleNameEdit ? check : pen;
 
@@ -39,6 +44,12 @@ const ShoppingCart = ({ shoppingCartName, setCartName }) => {
           onClick={() => setToggleEdit(!toggleNameEdit)}
         />
       </div>
+
+      <div className="cart__lists">
+        {shoppingCartList.map((list) => {
+          return <ShoppingCartItem key={list.id} cartItem={list} />;
+        })}
+      </div>
     </div>
   );
 };
@@ -46,6 +57,7 @@ const ShoppingCart = ({ shoppingCartName, setCartName }) => {
 const mapStateToProps = (state) => {
   return {
     shoppingCartName: selectShoppingCartName(state),
+    shoppingCartList: selectShoppingCartDetails(state),
   };
 };
 

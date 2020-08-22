@@ -1,0 +1,77 @@
+@import "../../styles/main";
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+.item-name {
+  font-size: 1.5rem;
+  color: $dark-blue;
+  font-weight: $bold;
+}
+
+.tag-box {
+  border: 1px solid $orange;
+  border-radius: 5px;
+}
+
+.trash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: $orange;
+  cursor: pointer;
+  &:hover {
+    background: rgba($orange, 0.8);
+  }
+  img {
+    max-width: 100%;
+    width: 10px;
+    height: 15px;
+  }
+}
+
+.reduce,
+.add,
+.quantity {
+  color: $orange;
+  font-size: 1.1rem;
+  font-weight: $bold;
+  margin: 0rem 0.5rem;
+}
+
+.quantity {
+  padding: 0.4rem 1.8rem;
+  border-radius: 2rem;
+}
+
+.add,
+.reduce {
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    background: $orange;
+    color: $white;
+  }
+}
