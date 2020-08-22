@@ -1,6 +1,10 @@
 import shoppingCartActionTypes from "./shopping-cart.types";
 
-import { addItemToCart, removeCartItem } from "./shopping-cart.utils";
+import {
+  addItemToCart,
+  removeCartItem,
+  reduceCartItem,
+} from "./shopping-cart.utils";
 
 const INITIAL_STATE = {
   shoppingCartDetails: [],
@@ -22,6 +26,15 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         shoppingCartDetails: removeCartItem(
+          state.shoppingCartDetails,
+          action.payload
+        ),
+      };
+    }
+    case shoppingCartActionTypes.REDUCE_CART_ITEM: {
+      return {
+        ...state,
+        shoppingCartDetails: reduceCartItem(
           state.shoppingCartDetails,
           action.payload
         ),

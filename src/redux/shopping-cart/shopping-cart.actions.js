@@ -24,3 +24,11 @@ export const removeItemFromCart = (item) => {
     payload: item,
   };
 };
+
+export const reduceCartItem = (itemToReduce) => {
+  return {
+    type: shoppingCartActionTypes.REDUCE_CART_ITEM,
+    info: "This action is used to reduce the item from cart.",
+    payload: itemToReduce,
+  };
+};
