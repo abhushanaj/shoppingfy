@@ -81,7 +81,12 @@ const ShoppingCart = ({
         </>
       ) : (
         <div className="group__lower">
-          <button className="btn btn--savecart" onClick={() => clearCart()}>
+          <button
+            className="btn btn--savecart"
+            onClick={() => {
+              clearCart();
+            }}
+          >
             Save Cart
           </button>
         </div>
