@@ -17,3 +17,12 @@ export const selectShoppingCartName = createSelector(
     return shoppingCart.shoppingCartName;
   }
 );
+
+export const selectTotalCartCount = createSelector(
+  [selectShoppingCartDetails],
+  (cartDetails) => {
+    return cartDetails.reduce((acc, currentItem) => {
+      return acc + currentItem.quantity;
+    }, 0);
+  }
+);

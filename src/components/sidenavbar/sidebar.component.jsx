@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import CartIcon from "../sidenav-cart-icon/sidenav-cart-icon.component";
+
 import logo from "../../asset/logo.svg";
 import list from "../../asset/lists.svg";
 import arrow from "../../asset/arrow.svg";
 import chart from "../../asset/chart.svg";
-import cart from "../../asset/cart.svg";
 
 import "./sidebar.styles.scss";
 
@@ -37,10 +38,7 @@ const SideNavigation = () => {
           <span className="tooltip tooltip--1">Statistics</span>
         </li>
       </ul>
-      <div className="cart-box">
-        <img src={cart} alt="Cart." />
-        <span className="cart-count">10</span>
-      </div>
+      <CartIcon />
     </nav>
   );
 };
