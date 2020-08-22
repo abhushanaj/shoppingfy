@@ -1,1 +1,24 @@
 @import "../../styles/main";
+
+.historypage {
+  &__content {
+    margin-top: 3rem;
+  }
+}
+
+.page {
+  &__name {
+    font-size: 2.6rem;
+    color: $dark-blue;
+    font-weight: $bold;
+    span {
+      color: $orange;
+    }
+  }
+  &__date {
+    color: $light-gray;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: $bold;
+  }
+}
