@@ -1,6 +1,6 @@
 import shoppingCartActionTypes from "./shopping-cart.types";
 
-import { addItemToCart } from "./shopping-cart.utils";
+import { addItemToCart, removeCartItem } from "./shopping-cart.utils";
 
 const INITIAL_STATE = {
   shoppingCartDetails: [],
@@ -13,6 +13,15 @@ const shoppingCartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         shoppingCartDetails: addItemToCart(
+          state.shoppingCartDetails,
+          action.payload
+        ),
+      };
+    }
+    case shoppingCartActionTypes.REMOVE_CART_ITEM: {
+      return {
+        ...state,
+        shoppingCartDetails: removeCartItem(
           state.shoppingCartDetails,
           action.payload
         ),
