@@ -6,11 +6,12 @@ import calender from "../../asset/calender.svg";
 /* Styling*/
 import "./grocery-list.styles.scss";
 
-const GroceryList = () => {
+const GroceryList = ({ cartDetails }) => {
+  const { shoppingCartName } = cartDetails;
   return (
     <div className="grocery__list">
       <div className="grocery__left">
-        <p>Shopping List Name</p>
+        <p>{shoppingCartName}</p>
       </div>
 
       <div className="grocery__right">
@@ -19,7 +20,7 @@ const GroceryList = () => {
           <p>Mon, 27/08/2020</p>
         </div>
 
-        <p className="status status--success">Completed</p>
+        <p className="status status--completed">Completed</p>
       </div>
     </div>
   );

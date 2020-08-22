@@ -1,12 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 
 /* Component */
 import GroceryList from "../../components/grocery-list/grocery-list.component";
 
-/* Asset */
+/* <Selectors*/
+import { selectCartHistoryDetails } from "../../redux/shopping-history/shopping-history.selectors";
+
+/* Styling */
 import "./history-page.styles.scss";
 
-const HistoryPage = () => {
+const HistoryPage = ({ cartHistoryDetails }) => {
   return (
     <main className="u-page historypage">
       <h1 className="page__name">
@@ -15,10 +19,19 @@ const HistoryPage = () => {
 
       <div className="historypage__content">
         <p className="page__date">August 2020</p>
-        <GroceryList />
+
+        {cartHistoryDetails.map((cartHistory, index) => {
+          return <GroceryList key={index} cartDetails={cartHistory} />;
+        })}
       </div>
     </main>
   );
 };
 
-export default HistoryPage;
+const mapStateToProps = (state) => {
+  return {
+    cartHistoryDetails: selectCartHistoryDetails(state),
+  };
+};
+
+export default connect(mapStateToProps)(HistoryPage);
