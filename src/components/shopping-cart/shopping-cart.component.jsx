@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
+/* Child Components */
 import ShoppingCartHelper from "../../components/shopping-cart-helper/shopping-cart-helper.component";
+import ShoppingCartItem from "../shopping-cart-item/shopping-cart-item.component";
 
+/* Selectors */
 import {
   selectShoppingCartName,
   selectShoppingCartDetails,
 } from "../../redux/shopping-cart/shopping-cart.selectors";
+
+/* Actions */
 import { setShoppingCartName } from "../../redux/shopping-cart/shopping-cart.actions";
+import { saveCartToHistory } from "../../redux/shopping-history/shopping-history.actions";
 
-import ShoppingCartItem from "../shopping-cart-item/shopping-cart-item.component";
-
+/* Assests */
 import pen from "../../asset/pen.svg";
 import check from "../../asset/check.svg";
 import cartillustration from "../../asset/cart-illustration.svg";
 
+/* Styling */
 import "./shopping-cart.styles.scss";
 
-const ShoppingCart = ({ shoppingCartName, setCartName, shoppingCartList }) => {
+const ShoppingCart = ({
+  shoppingCartName,
+  setCartName,
+  shoppingCartList,
+  saveCartToHistory,
+}) => {
   const [toggleNameEdit, setToggleEdit] = useState(false);
   const imgSource = toggleNameEdit ? check : pen;
 
@@ -68,7 +79,12 @@ const ShoppingCart = ({ shoppingCartName, setCartName, shoppingCartList }) => {
         <div className="group__lower">
           <button
             className="btn btn--savecart"
-            onClick={() => console.log("Clicked!")}
+            onClick={() =>
+              saveCartToHistory({
+                shoppingCartName,
+                shoppingCartList,
+              })
+            }
           >
             Save Cart
           </button>
@@ -88,6 +104,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setCartName: (name) => dispatch(setShoppingCartName(name)),
+    saveCartToHistory: (cart) => dispatch(saveCartToHistory(cart)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

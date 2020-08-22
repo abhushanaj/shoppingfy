@@ -8,11 +8,14 @@ import HomePage from "./pages/home-page/home-page.component";
 import HistoryPage from "./pages/history-page/history-page.component";
 import StatisticsPage from "./pages/statistics-page/statistics-page.component";
 
+// import ModalScreen from "./components/modal-screen/modal-screen.component";
+
 import "./App.scss";
 
 function App() {
   return (
     <>
+      {/* <ModalScreen question={"Do you want to save the Cart ?"} /> */}
       <SideNavigation />
       <div className="main__content">
         <Switch>
