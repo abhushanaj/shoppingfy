@@ -1,1 +1,8 @@
 @import "../../styles/main";
+
+.page__name {
+  font-weight: $bold;
+  span {
+    color: $orange;
+  }
+}
