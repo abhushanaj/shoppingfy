@@ -7,3 +7,11 @@ export const saveCartToHistory = (cart) => {
     payload: cart,
   };
 };
+
+export const setGroceryListStatus = (groceryID, status = "pending") => {
+  return {
+    type: shoppingHistoryTypes.SET_GROCERY_STATUS,
+    info: "This action is used to set the status to grocery cart history",
+    payload: { groceryID, status },
+  };
+};

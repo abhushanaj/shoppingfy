@@ -20,13 +20,8 @@ const HistoryPage = ({ cartHistoryDetails }) => {
       <div className="historypage__content">
         {/* <p className="page__date">August 2020</p> */}
 
-        {cartHistoryDetails.map((cartHistory, index) => {
-          return (
-            <GroceryList
-              key={cartHistoryDetails.id}
-              cartDetails={cartHistory}
-            />
-          );
+        {cartHistoryDetails.map((cartHistory) => {
+          return <GroceryList key={cartHistory.id} cartDetails={cartHistory} />;
         })}
       </div>
     </main>

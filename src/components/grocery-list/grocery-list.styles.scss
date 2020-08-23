@@ -64,3 +64,43 @@
     max-width: 100%;
   }
 }
+
+.dropdown {
+  &__menu {
+    width: max-content;
+    background: $white;
+    font-size: 1.4rem;
+    border: 1px solid $white;
+    padding: 1rem 1.5rem;
+    position: absolute;
+    bottom: -8.5rem;
+    right: 0rem;
+    z-index: 10;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &__option {
+    margin: 0.5rem 0;
+    width: 100%;
+    color: $dark-blue;
+    cursor: pointer;
+    padding: 0.4rem 1.8rem;
+    text-transform: uppercase;
+    font-weight: $bold;
+    letter-spacing: 2px;
+
+    &--completed {
+      &:hover {
+        background: $success;
+        color: $white;
+      }
+    }
+
+    &--cancelled {
+      &:hover {
+        background: $error;
+        color: $white;
+      }
+    }
+  }
+}

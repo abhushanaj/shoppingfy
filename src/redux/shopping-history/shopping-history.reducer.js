@@ -1,6 +1,9 @@
 import shoppingHistoryTypes from "./shopping-history.types";
 
-import { addCartToHistory } from "./shopping-history.utils";
+import {
+  addCartToHistory,
+  setGroceryListStatus,
+} from "./shopping-history.utils";
 
 const INITIAL_STATE = {
   cartHistoryDetails: [],
@@ -13,6 +16,16 @@ const cartHistoryReducer = (state = INITIAL_STATE, action) => {
         cartHistoryDetails: addCartToHistory(
           state.cartHistoryDetails,
           action.payload
+        ),
+      };
+    }
+    case shoppingHistoryTypes.SET_GROCERY_STATUS: {
+      return {
+        ...state,
+        cartHistoryDetails: setGroceryListStatus(
+          state.cartHistoryDetails,
+          action.payload.groceryID,
+          action.payload.status
         ),
       };
     }

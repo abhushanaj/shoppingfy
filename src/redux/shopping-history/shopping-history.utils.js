@@ -11,3 +11,18 @@ export const getHistoryCartSummary = (cart) => {
     return acc + item.quantity;
   }, 0);
 };
+
+/* Utility to set the grocery history list to a particular status */
+
+export const setGroceryListStatus = (cart, id, status) => {
+  return cart.map((cartItem) => {
+    if (cartItem.id === id) {
+      return {
+        ...cartItem,
+        status,
+      };
+    } else {
+      return { ...cartItem };
+    }
+  });
+};
