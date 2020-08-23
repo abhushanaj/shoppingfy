@@ -15,7 +15,11 @@ export const selectCartHistoryDates = createSelector(
   [selectCartHistoryDetails],
   (cartHistory) => {
     return cartHistory.map((cart) => {
-      return new Date(cart.date).toDateString();
+      const dates = [];
+      if (cart.status === "completed") {
+        dates.push(new Date(cart.date).toDateString());
+      }
+      return dates;
     });
   }
 );
@@ -23,7 +27,10 @@ export const selectCartHistoryDates = createSelector(
 export const selectTotalShopQuantity = createSelector(
   [selectCartHistoryDetails],
   (cartHistory) => {
-    return cartHistory.map((cart) => {
+    const completedGrocery = cartHistory.filter((cart) => {
+      return cart.status === "completed";
+    });
+    return completedGrocery.map((cart) => {
       return cart.shoppingCartList.reduce((acc, cartItem) => {
         return acc + cartItem.quantity;
       }, 0);

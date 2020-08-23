@@ -20,7 +20,9 @@ const StatisticsGraph = ({ labels, data }) => {
         datasets: [
           {
             data,
-            backgroundColor: "rgba(249, 162, 11, 0.68)",
+            backgroundColor: ["rgba(240, 238, 238, 0.02)"],
+            borderColor: "#44bf40",
+            order: 1,
           },
         ],
       },
@@ -67,9 +69,6 @@ const StatisticsGraph = ({ labels, data }) => {
                 fontStyle: "bold",
                 fontFamily: "'Quicksand'",
               },
-              ticks: {
-                beginAtZero: true,
-              },
             },
           ],
         },
@@ -79,7 +78,11 @@ const StatisticsGraph = ({ labels, data }) => {
 
   return (
     <div className="statistics__graph">
-      <canvas id="statistics"></canvas>
+      <canvas
+        id="statistics"
+        aria-label="Shopping Cart Statistics"
+        role="img"
+      ></canvas>
     </div>
   );
 };
