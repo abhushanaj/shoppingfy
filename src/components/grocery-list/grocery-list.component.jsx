@@ -3,11 +3,14 @@ import React from "react";
 /* Assets*/
 import calender from "../../asset/calender.svg";
 
+/* Utilities*/
+import { displayDate } from "../../utils/date.utils";
+
 /* Styling*/
 import "./grocery-list.styles.scss";
 
 const GroceryList = ({ cartDetails }) => {
-  const { shoppingCartName } = cartDetails;
+  const { shoppingCartName, date } = cartDetails;
   return (
     <div className="grocery__list">
       <div className="grocery__left">
@@ -17,7 +20,7 @@ const GroceryList = ({ cartDetails }) => {
       <div className="grocery__right">
         <div className="calender">
           <img src={calender} alt="Calender Icon" />
-          <p>Mon, 27/08/2020</p>
+          <p>{displayDate(date)}</p>
         </div>
 
         <p className="status status--completed">Completed</p>

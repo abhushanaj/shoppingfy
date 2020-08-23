@@ -46,7 +46,11 @@ const ShoppingCart = ({
         <ModalScreen
           question="Do you wish to save the cart?"
           yesHandler={() =>
-            saveCartToHistory({ shoppingCartName, shoppingCartList })
+            saveCartToHistory({
+              date: new Date(),
+              shoppingCartName,
+              shoppingCartList,
+            })
           }
           noHandler={() => setShowModal(false)}
           callbacks={[
