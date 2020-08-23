@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { v4 as generateID } from "uuid";
 
 /* Child Components */
 import ShoppingCartHelper from "../../components/shopping-cart-helper/shopping-cart-helper.component";
@@ -48,6 +49,7 @@ const ShoppingCart = ({
           yesHandler={() =>
             saveCartToHistory({
               date: new Date(),
+              id: generateID(),
               status: "pending",
               shoppingCartName,
               shoppingCartList,

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 /* Child Components */
 import GroceryStatusTag from "../grocery-status-tag/grocery-status-tag.component";
+import GroceryListDropDown from "../grocery-list-dropdown/grocery-list-dropdown.component";
 
 /* Assets*/
 import calender from "../../asset/calender.svg";
+import chevron from "../../asset/chevron-down.svg";
 
 /* Utilities*/
 import { displayDate } from "../../utils/date.utils";
@@ -14,25 +16,40 @@ import { getHistoryCartSummary } from "../../redux/shopping-history/shopping-his
 import "./grocery-list.styles.scss";
 
 const GroceryList = ({ cartDetails }) => {
-  const { shoppingCartName, date, status, shoppingCartList } = cartDetails;
-  return (
-    <div className="grocery__list">
-      <div className="grocery__left">
-        <p>{shoppingCartName}</p>
-      </div>
+  const [toggleDropDown, setToggleDropDown] = useState(false);
 
-      <p className="shopping-summary">
-        {`${getHistoryCartSummary(shoppingCartList)} Items`}
-      </p>
-      <div className="grocery__right">
-        <div className="calender">
-          <img src={calender} alt="Calender Icon" />
-          <p>{displayDate(date)}</p>
+  const { shoppingCartName, date, status, shoppingCartList, id } = cartDetails;
+
+  return (
+    <>
+      <div className="grocery__list">
+        <div className="grocery__left">
+          <p>{shoppingCartName}</p>
         </div>
 
-        <GroceryStatusTag status={status} />
+        <p className="shopping-summary">
+          {`${getHistoryCartSummary(shoppingCartList)} Items`}
+        </p>
+        <div className="grocery__right">
+          <div className="calender">
+            <img src={calender} alt="Calender Icon" />
+            <p>{displayDate(date)}</p>
+          </div>
+          <GroceryStatusTag status={status} />
+          <div
+            className="dropdown__select"
+            onClick={() =>
+              setToggleDropDown((prevState) => {
+                return !prevState;
+              })
+            }
+          >
+            <img src={chevron} alt="Chevron down icon" />
+          </div>
+          {toggleDropDown === false ? null : <GroceryListDropDown />}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
