@@ -7,14 +7,14 @@ import {
   NoActionButton,
 } from "../action-buttons/action-buttons.component";
 
-const ModalScreen = ({ children, question }) => {
+const ModalScreen = ({ question, yesHandler, noHandler, callbacks }) => {
   return (
     <div className="modal__background">
       <div className="modal__content">
         <p>{question}</p>
         <div className="action__group">
-          <YesActionButton />
-          <NoActionButton />
+          <YesActionButton actionFunction={yesHandler} callbacks={callbacks} />
+          <NoActionButton actionFunction={noHandler} />
         </div>
       </div>
     </div>

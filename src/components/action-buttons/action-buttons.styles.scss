@@ -10,11 +10,18 @@
     border-radius: 5px;
     font-weight: bold;
     font-family: inherit;
+    transition: 0.3s all ease-in-out;
   }
   &--yes {
     background: $success;
+    &:hover {
+      background: rgba($success, 0.8);
+    }
   }
   &--no {
     background: $error;
+    &:hover {
+      background: rgba($error, 0.8);
+    }
   }
 }
