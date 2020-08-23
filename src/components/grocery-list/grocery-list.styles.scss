@@ -44,20 +44,3 @@
     font-size: 1.2rem;
   }
 }
-
-.status {
-  color: $white;
-  font-weight: bold;
-  padding: 0.6rem 1.5rem;
-  border-radius: 2rem;
-
-  &--completed {
-    border: 1px solid $success;
-    background: $success;
-  }
-
-  &--cancelled {
-    border: 1px solid $error;
-    background: $error;
-  }
-}

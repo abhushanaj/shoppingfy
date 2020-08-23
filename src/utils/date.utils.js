@@ -1,4 +1,5 @@
 export const displayDate = (date) => {
-  const dateString = date.toDateString();
+  const cartDate = new Date(date);
+  const dateString = cartDate.toDateString();
   return `${dateString}`;
 };

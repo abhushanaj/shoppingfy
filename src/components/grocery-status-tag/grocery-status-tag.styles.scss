@@ -1,0 +1,24 @@
+@import "../../styles/main";
+
+.status {
+  color: $white;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+
+  &--completed {
+    border: 1px solid $success;
+    background: $success;
+  }
+
+  &--cancelled {
+    border: 1px solid $error;
+    background: $error;
+  }
+
+  &--pending {
+    border: 1px solid $purple;
+    background: $purple;
+  }
+}

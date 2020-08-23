@@ -48,6 +48,7 @@ const ShoppingCart = ({
           yesHandler={() =>
             saveCartToHistory({
               date: new Date(),
+              status: "pending",
               shoppingCartName,
               shoppingCartList,
             })

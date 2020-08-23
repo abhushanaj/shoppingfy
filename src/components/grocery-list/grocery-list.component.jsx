@@ -1,5 +1,8 @@
 import React from "react";
 
+/* Child Components */
+import GroceryStatusTag from "../grocery-status-tag/grocery-status-tag.component";
+
 /* Assets*/
 import calender from "../../asset/calender.svg";
 
@@ -10,7 +13,7 @@ import { displayDate } from "../../utils/date.utils";
 import "./grocery-list.styles.scss";
 
 const GroceryList = ({ cartDetails }) => {
-  const { shoppingCartName, date } = cartDetails;
+  const { shoppingCartName, date, status } = cartDetails;
   return (
     <div className="grocery__list">
       <div className="grocery__left">
@@ -23,7 +26,7 @@ const GroceryList = ({ cartDetails }) => {
           <p>{displayDate(date)}</p>
         </div>
 
-        <p className="status status--completed">Completed</p>
+        <GroceryStatusTag status={status} />
       </div>
     </div>
   );
