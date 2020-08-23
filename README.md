@@ -24,7 +24,7 @@ But there's more, have a detailed statitics for the items you have shopped avail
 
 ### Steps to start your application
 
-1. Clone the project using ``.
+1. Clone the project using `https://github.com/abhu-A-J/shoppingfy.git`.
 2. Move into the directory using `cd shoppingfy`.
 3. Install all the dependencies using `npm install`.
 4. Start the application using `npm start`.
