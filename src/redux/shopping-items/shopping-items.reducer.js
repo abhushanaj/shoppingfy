@@ -73,19 +73,19 @@ const INITIAL_STATE = {
           name: "Brownie Chocolate Drink",
         },
         {
-          id: "14",
+          id: "15",
           name: "Choc-Ola",
         },
         {
-          id: "15",
+          id: "16",
           name: "Gin",
         },
         {
-          id: "16",
+          id: "17",
           name: "Irish Whiskey",
         },
         {
-          id: "17",
+          id: "18",
           name: "Moonshine",
         },
       ],
@@ -95,15 +95,15 @@ const INITIAL_STATE = {
       categoryName: "Pets Food",
       items: [
         {
-          id: "18",
+          id: "19",
           name: "Chicken leg box",
         },
         {
-          id: "19",
+          id: "20",
           name: "Chicken 1kg",
         },
         {
-          id: "20",
+          id: "21",
           name: "Pork Fillets",
         },
       ],
