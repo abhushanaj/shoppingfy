@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { v4 as generateID } from "uuid";
+
+/* Actions */
+import { addItemToCart } from "../../redux/shopping-cart/shopping-cart.actions";
 
 /* Asset*/
 import foodImage from "../../asset/fruit.png";
@@ -6,7 +11,7 @@ import foodImage from "../../asset/fruit.png";
 /* Styling */
 import "./modal-form.styles.scss";
 
-const ModalForm = () => {
+const ModalForm = ({ callback, addItemToCart }) => {
   const [itemName, setItemName] = useState("");
   const [itemDescription, setItemDescription] = useState("");
 
@@ -15,9 +20,13 @@ const ModalForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(itemName + itemDescription);
+    addItemToCart({
+      id: generateID(),
+      name: itemName,
+    });
     setItemName("");
     setItemDescription("");
+    callback();
   };
 
   return (
@@ -82,4 +91,9 @@ const ModalForm = () => {
   );
 };
 
-export default ModalForm;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addItemToCart: (item) => dispatch(addItemToCart(item)),
+  };
+};
+export default connect(null, mapDispatchToProps)(ModalForm);
