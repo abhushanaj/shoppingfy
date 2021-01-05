@@ -38,8 +38,17 @@ const ShoppingCart = ({
 }) => {
   const [toggleNameEdit, setToggleEdit] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showToolTip, setShowToolTip] = useState(false);
 
   const imgSource = toggleNameEdit ? check : pen;
+
+  const handleToolTipShow = (e) => {
+    setShowToolTip(true);
+  };
+
+  const handleToolTipHide = (e) => {
+    setShowToolTip(false);
+  };
 
   return (
     <>
@@ -81,13 +90,19 @@ const ShoppingCart = ({
               ) : (
                 <h3>{shoppingCartName} </h3>
               )}
-
-              <img
-                src={imgSource}
-                alt="Pen"
-                className="pen"
-                onClick={() => setToggleEdit(!toggleNameEdit)}
-              />
+              <div className="edit-name-container">
+                <img
+                  src={imgSource}
+                  alt="Pen"
+                  className="pen"
+                  onClick={() => setToggleEdit(!toggleNameEdit)}
+                  onMouseOver={handleToolTipShow}
+                  onMouseLeave={handleToolTipHide}
+                />
+                {!toggleNameEdit && showToolTip ? (
+                  <span className="cart-name-tooltip">Edit Name</span>
+                ) : null}
+              </div>
             </div>
 
             <div className="cart__lists">
