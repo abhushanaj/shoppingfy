@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { v4 as generateID } from "uuid";
 
@@ -29,8 +29,25 @@ const ModalForm = ({ callback, addItemToCart }) => {
     callback();
   };
 
+  useEffect(() => {
+    const handleModalClose = (e) => {
+      e.stopPropagation();
+      if (e.target.getAttribute("data-name")) {
+        callback();
+      }
+    };
+   
+    const modalBackground = document.querySelector(".modalform__container");
+
+    modalBackground.addEventListener("click", handleModalClose);
+
+    return () => {
+      modalBackground.removeEventListener("click", handleModalClose);
+    };
+  }, [callback]);
+
   return (
-    <div className="modalform__container">
+    <div className="modalform__container" data-name="modalBackground">
       <div className="modalform">
         <form onSubmit={handleSubmit}>
           <div className="food__picture">
