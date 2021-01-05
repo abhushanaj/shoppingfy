@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   h3 {
     font-size: 1.6rem;
   }
@@ -25,12 +24,7 @@
     outline: 0;
     font-weight: $bold;
   }
-
-  .pen {
-    width: 1.8rem;
-    height: 1.8rem;
-    cursor: pointer;
-  }
+  
 }
 
 .group {
@@ -75,3 +69,29 @@
     background: rgba($orange, 0.8);
   }
 }
+
+.edit-name-container {
+  position: relative;
+  .pen {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+.cart-name-tooltip {
+  color: $white;
+  background: $black;
+  font-weight: $bold;
+  font-size: 1.3rem;
+  position: absolute;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 0rem;
+  top: 2.5rem;
+  display: block;
+  width: max-content;
+  transition: all 0.2s ease-in;
+}
+
